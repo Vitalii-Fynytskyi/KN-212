@@ -1,0 +1,450 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <Title>DentalClinic</Title>
+    <link rel="icon" href="icon.png" />
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <ul id="navigationMenu">
+        <li class="navigationItem">
+            <a href="index.html">
+                <img id="logo" src="logo.png" alt="logo" />
+            </a>
+        </li>
+        <li class="navigationItem" id="navigationAboutLI"><a class="navigationButtonText" href="#About">Про нас</a></li>
+        <li class="navigationItem"><a class="navigationButtonText" href="#Prices">Послуги</a></li>
+        <li class="navigationItem"><a class="navigationButtonText" href="#Dentists">Лікарі</a></li>
+        <li class="navigationItem"><a class="navigationButtonText" href="#Comments">Відгуки</a></li>
+        <li class="navigationItem"><a class="navigationButtonText" href="#" onclick="document.getElementById('formRequestAppointment').style.display='block'">Реєстрація</a></li>
+        <li class="navigationItem"><a class="navigationButtonText" href="#Contacts">Контакти</a></li>
+        <li class="navigationItem dropdown" id="dropdownWideScreenButton">
+            <a class="navigationButtonText" href="#">Випадаюче</a>
+            <div class="dropdownContent">
+                <a class="navigationButtonText" href="#">Опція 1</a>
+                <a class="navigationButtonText" href="#">Опція 2</a>
+            </div>
+        </li>
+        <li class="navigationItem" id="buttonThemeWideLI"><a class="navigationButtonText" id="buttonThemeWide" href="#" onclick="changeTheme()">Темна тема</a></li>
+        <li class="navigationResponsiveButton"><a class="navigationButtonText" onclick="dropdownMenuClickListener()">☰</a></li>
+        <div id="dropdownMenu" onclick="dropdownMenuClose()"> 
+            <a class="navigationButtonText" href="#About" id="navigationAboutAdaptive">Про нас</a>
+            <a class="navigationButtonText" href="#Prices">Послуги</a>
+            <a class="navigationButtonText" href="#Dentists">Лікарі</a>
+            <a class="navigationButtonText" href="#Comments">Відгуки</a>
+            <a class="navigationButtonText" href="#" onclick="document.getElementById('formRequestAppointment').style.display='block'">Реєстрація</a>
+            <a class="navigationButtonText" href="#Contacts">Контакти</a>
+            <a class="navigationButtonText dropdown" href="#" onmousemove="showDropdownMoveListener()">Випадаюче</a>
+            <div class="dropdownContent" id="dropdownContextMenu">
+                <a class="navigationButtonText" href="#">Опція 1</a>
+                <a class="navigationButtonText" href="#">Опція 2</a>
+            </div>
+            <a class="navigationButtonText" id="buttonThemeAdaptive" href="#" onclick="changeTheme()">Темна тема</a>
+        </div>
+    </ul>
+    <div class="textPage startPageContent">Безболісне лікування, імплантація і чистка зубів від лікарів з досвідом більше ніж 10 років</div>
+    <div class="textPage"><button type="button" class="buttonPage" onclick="document.getElementById('formRequestAppointment').style.display='block'">Зареєструватись на прийом</button></div>
+    <p id="About">У нашій клініці <strong>DentalClinic</strong> вже понад 20 років працюють одні з найкращих фахівців, що допомагають людям справитись з стоматологічними захворюваннями. Наші лікарі підходять до проблеми стоматологічного захворювання комплексно, враховуючи усі можливі і наявні причини виникнення хвороби. Команда лікарів індивідуально для кожного окремого пацієнта підбирає особливу схему лікування, що буде найбільш ефективна та дієва саме для нього.</p>
+    <div>
+        <div class="photoContainer">
+            <div class="photoCabinet fade">
+                <div class="slideNumberText">1/3</div>
+                <img src="01.jpg" alt="Фото кабінету 1" class="imageCabinet"/>
+            </div>
+            <div class="photoCabinet fade">
+                <div class="slideNumberText">2/3</div>
+                <img src="02.jpg" alt="Фото кабінету 2" class="imageCabinet"/>
+            </div>
+            <div class="photoCabinet fade">
+                <div class="slideNumberText">3/3</div>
+                <img src="03.jpg" alt="Фото кабінету 3" class="imageCabinet"/>
+            </div>
+            <a class="prev" onclick="nextPhoto(-1)">&#10094</a>
+            <a class="next" onclick="nextPhoto(1)">&#10095</a>
+        </div>
+        <br/>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentPhoto(1)"></span>
+            <span class="dot" onclick="currentPhoto(2)"></span>
+            <span class="dot" onclick="currentPhoto(3)"></span>
+        </div>
+    </div>
+    
+
+    <div class="textPage"><h2 id="Prices">Прейскурант</h2></div>
+    <div class="textPage"><h4 class="pricesTitle">Ортопедична стоматологія</h4></div>
+
+    <div>
+        <table class="tablePrices">
+            <tr>
+                <th>Види послуг</th>
+                <th>Вартість, грн</th>
+            </tr>
+            <tr>
+                <td>
+                    <pre>Зняття старої коронки:
+                - штампованої
+                - литої
+        </pre>
+                </td>
+                <td>
+                    <pre>        
+                50,00
+                100,00
+        </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>Коренево-куксова вкладка:
+                - однокоренева, багатокоренева
+                - розбірна
+        </pre>
+                </td>
+                <td>
+                    <pre>        
+                400,00
+                500,00
+        </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>Коронки:
+                - тимчасова пластмасова
+                - цільнолита
+                - металопластмасова
+                - металокерамічна
+                - безметалева кераміка
+                - вінір
+        </pre>
+                </td>
+                <td>
+                    <pre>        
+                400,00
+                600,00
+                800,00
+                1200,00-1500,00
+                3000,00
+                3000,00
+        </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>Знімні протези:
+                - пластинковий
+                - еластичний
+                - бюгельний протез із опорно-утримаючими кламерами
+        </pre>
+                </td>
+                <td>
+                    <pre>        
+                2000,00
+                4000,00
+                6500,00
+        </pre>
+                </td>
+            </tr>
+            <tr>
+                <td><pre>Починка протезу</pre></td>
+                <td><pre>            300,00</pre></td>
+            </tr>
+            <tr>
+                <td><pre>Перебазування протезу</pre></td>
+                <td><pre>            500,00</pre></td>
+            </tr>
+            <tr>
+                <td><pre>Цементування коронки</pre></td>
+                <td><pre>            100,00</pre></td>
+            </tr>
+        </table>
+        <div class="textPage"><h4 class="pricesTitle">Пломбування зубів</h4></div>
+    
+        <table class="tablePrices">
+            <tr>
+                <th>Види послуг</th>
+                <th>Вартість, грн</th>
+            </tr>
+            <tr>
+                <td><pre>Пломба із склоіономерного цементу</pre></td>
+                <td><pre>            250,00</pre></td>
+            </tr>
+            <tr>
+                <td><pre>Пломбування зубів фотополімерним матеріалом</pre></td>
+                <td><pre>            300,00-400,00</pre></td>
+            </tr>
+            <tr>
+                <td><pre>Пломбування фотополімерним матеріалом преміум класу</pre></td>
+                <td><pre>            500,00-600,00</pre></td>
+            </tr>
+            <tr>
+                <td><pre>Реставрація фронтального зуба</pre></td>
+                <td><pre>            700,00</pre></td>
+            </tr>
+            <tr>
+                <td><pre>Реставрація зуба з використанням скловолоконного штифта</pre></td>
+                <td><pre>            800,00</pre></td>
+            </tr>
+            <tr>
+                <td><pre>Ізолююча прокладка</pre></td>
+                <td><pre>            50,00</pre></td>
+            </tr>
+            <tr>
+                <td><pre>Лікувальна прокладка</pre></td>
+                <td><pre>            50,00</pre></td>
+            </tr>
+        </table>
+    
+        <div class="textPage"><h4 class="pricesTitle">Терапевтична стоматологія</h4></div>
+    
+        <table class="tablePrices">
+            <tr>
+                <th>Види послуг</th>
+                <th>Вартість, грн</th>
+            </tr>
+            <tr>
+                <td><pre>Огляд і консультація</pre></td>
+                <td><pre>            Безкоштовно</pre></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>Анестезія:
+                - аплікаційна
+                - інфільтраційна
+                - провідникова
+        </pre>
+                </td>
+                <td>
+                    <pre>        
+                30,00
+                50,00
+                80,00
+        </pre>
+                </td>
+            </tr>
+            <tr>
+                <td><pre>Рентген</pre></td>
+                <td><pre>            50,00</pre></td>
+            </tr>
+            <tr>
+                <td><pre>Ізоляція робочого поля кофердамом</pre></td>
+                <td><pre>            50,00</pre></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>Професійна гігієна ротової порожнин:
+                - одного зуба
+                - всіх зубів
+                - з використанням содоструйного апарату (всіх)
+        </pre>
+                </td>
+                <td>
+                    <pre>        
+                25,00
+                300,00
+                500,00
+        </pre>
+                </td>
+            </tr>
+            <tr>
+                <td><pre>Надання невідкладної допомоги пацієнтам з гострим болем</pre></td>
+                <td><pre>            150,00</pre></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>Видалення зубів:
+                - молочного
+                - однокореневого
+                - багатокореневого
+                - зуба мудрості
+                - накладання швів
+        </pre>
+                </td>
+                <td>
+                    <pre>        
+                100,00
+                200,00
+                300,00
+                400,00
+                200,00
+        </pre>
+                </td>
+            </tr>
+        </table class="tablePrices">
+        <div class="textPage"><h4 class="pricesTitle">Дитяча стоматологія</h4></div>
+    
+        <table class="tablePrices">
+            <tr>
+                <th>Види послуг</th>
+                <th>Вартість, грн</th>
+            </tr>
+            <tr>
+                <td><pre>Пломба із склоіономерного цементу</pre></td>
+                <td><pre>            250,00</pre></td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>Герметизація фісур фотополімерними матеріалами:
+                - неінвазивна
+                - інвазивна
+        </pre>
+                </td>
+                <td>
+                    <pre>        
+                250,00
+                300,00
+        </pre>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <pre>Пломбування каналів молочних зубів:
+                - одноканального
+                - трьохканального
+        </pre>
+                </td>
+                <td>
+                    <pre>        
+                150,00
+                300,00
+        </pre>
+                </td>
+            </tr>
+            <tr>
+                <td><pre>Сріблення одного зуба</pre></td>
+                <td><pre>            50,00</pre></td>
+            </tr>
+            <tr>
+                <td><pre>Видалення молочного зуба (без анестезії)</pre></td>
+                <td><pre>            100,00</pre></td>
+            </tr>
+        </table>
+    </div>
+    <div class="textPage"><h2 id="Dentists">Лікарі</h2></div>
+    <div class="dentistContainer">
+        <div class="dentistPhotoContainer">
+            <img src="image1.png" alt="dentist1" class="dentistPhoto" />
+            <pre class="dentistDescription">
+<strong>Павло Андріїв</strong>
+Стоматолог хірург, лікар імплантолог
+</pre>
+        </div>
+        <div class="dentistPhotoContainer">
+            <img src="image9.png" alt="dentist2" class="dentistPhoto" />
+            <pre class="dentistDescription">
+<strong>Ірина Іванова</strong>
+Ортодонт
+</pre>
+        </div>
+        <div class="dentistPhotoContainer">
+            <img src="image2.png" alt="dentist3" class="dentistPhoto" />
+            <pre class="dentistDescription">
+<strong>Антон Петров</strong>
+Лікар стоматолог загальної практики
+</pre>
+        </div>
+    </div>
+
+    <h2 class="textPage" id="Comments">Відгуки клієнтів</h2>
+    <button type="button" class="buttonPage">Залишити відгук</button>
+    <div>
+        <div class="commentAuthor">
+            Ростислав
+            <time class="commentDate">22 лютого 2020</time>
+        </div>
+        <div class="comment">
+            <p>Дуже привітний персонал, оперативно все організували по лікуванню.</p>
+        </div>
+        <div>
+            <div class="commentAuthor">
+                Галина
+                <time class="commentDate">21 лютого 2020</time>
+            </div>
+            <div class="comment">
+                <p>Професійне і якісне обслуговування. Індивідуальний підхід до кожного пацієнта. Дуже класна клініка. Рекомендую!</p>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <footer>
+        <h2 class="textPage" id="Contacts">Контакти</h2>
+        <div class="col-md-4">
+            <p>
+                <strong class="uppercase">Адреса</strong>
+                м. Львів, вул. Зелена 58
+            </p>
+            <p>
+                <strong class="uppercase">Графік роботи</strong>
+                Пн-Нд: 09:00 - 21:00
+            </p>
+        </div>
+        <div class="col-md-4">
+            <p>
+                <strong class="uppercase">Телефони</strong>
+                <label class="telephoneNumber"> 098 913 53 53</label>
+                <label class="telephoneNumber"> 050 913 53 53</label>
+                <label class="telephoneNumber"> 063 913 53 53</label>
+            </p>
+            <strong class="uppercase">Мессенджери</strong>
+            <ul class="links">
+                <li>
+                    <a href="#" aria-hidden="true" rel="nofollow">
+                        <img src="viber_icon.png" alt="Viber" width="32" height="32" />
+
+                    </a>
+                </li>
+                <li>
+                    <a href="#" aria-hidden="true" rel="nofollow">
+                        <img src="telegram_icon.png" alt="telegram" width="32" height="32" />
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <p>
+                <strong class="uppercase">Email</strong>
+                clinicdent@mail.ua
+            </p>
+            <p>
+                <strong class="uppercase">Соціальні мережі</strong>
+                <ul class="links">
+                    <li>
+                        <a href="#" target="_blank" rel="nofollow">
+                            <img src="facebook_icon.png" alt="facebook" width="32" height="32" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank" rel="nofollow">
+                            <img src="instagram_icon.png" alt="facebook" width="32" height="32" />
+                        </a>
+                    </li>
+                </ul>
+            </p>
+        </div>
+    </footer>
+    <div id="formRequestAppointment" class="formPage">
+        <form method="post" class="formAppointment" id="formRegister">
+            <div>
+                <h2>Реєстрація</h2>
+                <label>Введіть дані для реєстрації на прийом</label>
+                <input type="text"  placeholder="Введіть ваше ім'я та прізвище" name="name" id="registrationName" required/>
+                <div class="pickGender">
+                    <input type="radio" name="gender" value="male" id="registrationGenderMale">Чоловік</input>
+                    <input type="radio" name="gender" value="female" id="registrationGenderFemale">Жінка</input>
+                </div>
+                <input type="email" placeholder="Введіть ваш e-mail" name="email" id="registrationEmail" required/>
+                <input type="tel" placeholder="Номер телефону" name="mobileNumber" id="registrationPhone" pattern="[0-9]{5,}" required/>
+                <textarea name="message" cols="40" rows="6" placeholder="Опишіть свою проблему"></textarea>
+                <label>Будь ласка повідомте нам зручний для вас час та опишіть свою проблему</label>
+                <input type="button" value="Надіслати повідомлення" class="buttonPage" id="buttonSubmitRegister" disabled/>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="myscripts.js"></script>
+</html>
